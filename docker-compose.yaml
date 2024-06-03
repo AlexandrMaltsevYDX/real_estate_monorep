@@ -1,6 +1,25 @@
 version: "3.8"
 
 services:
+  backend: &django
+    build:
+      context: ./back
+      dockerfile: Dockerfile
+    env_file:
+      - infra/postgres/.env
+    command: python manage.py runserver
+    expose:
+      - "8000"
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/app
+      - media:/app/media
+      - static:/app/staticroot
+    networks:
+      - real_estate_network
+
+
   frontend:
     build:
       context: ./front
