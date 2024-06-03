@@ -1,0 +1,29 @@
+@import '~global_styles';
+
+.page {
+  @include scrollbar ($arrows: true);
+
+  color: $dark;
+  background-color: $white;
+  font-family: $ff-gothamPro;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: $regular;
+
+  width: 100%;
+}
+
+.container {
+  min-height: 100vh;
+  margin: 0 auto;
+  display: grid;
+  align-content: space-between;
+  //justify-content: center;
+  grid-template-rows: auto;
+  grid-template-areas:
+  "header"
+  "navbar"
+  "main"
+  "footer";
+}
+

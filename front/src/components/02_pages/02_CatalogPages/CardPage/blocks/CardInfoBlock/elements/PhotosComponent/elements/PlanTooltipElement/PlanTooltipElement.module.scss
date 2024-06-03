@@ -1,0 +1,58 @@
+  @import '~global_styles';
+
+  .imageInfoButton {
+    max-height: 45px;
+    display: inline-flex;
+    @include common-button($appearance: dark,
+                            $padding: 0 0 0 20px);
+    text-align: center;
+    font-size: 22px;
+    font-weight: $regular;
+    min-width: 0;
+
+    @include breakpoint(screen768) {
+      padding: 0 0 0 16px;
+    }
+
+    &:hover {
+      & svg {
+        transition: stroke .3s linear, scale .3s ease;
+        fill: $dark;
+        stroke: $white;
+        scale: 1.2;
+
+        & path:first-of-type {
+          stroke: none;
+        }
+
+      }
+    }
+
+
+  }
+  .icon {
+      width: 35px;
+      height: 35px;
+      margin: 5px 5px 5px 15px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include breakpoint(screen768) {
+        margin: 5px 5px 5px 10px;
+      }
+
+      & svg {
+        transition: scale .3s linear;
+        border-radius: 50%;
+
+
+        @include breakpoint(screen768) {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+
+

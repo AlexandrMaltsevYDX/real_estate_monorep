@@ -1,0 +1,74 @@
+@import '~global_styles';
+
+.wrapper {
+  width: 100%;
+  color: $white;
+
+  &__bg {
+    background-image: url('../../../../../../../../../public/img/headBlock/mainBackground.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.container {
+  @include mainContainer();
+  @include flexColumnGap($gap: 0);
+  position: relative;
+  align-items: center;
+  text-align: center;
+}
+
+.titleContainer {
+  margin: clamp(9rem, 15vw, 11.875rem) auto;
+
+  @include breakpoint(screen1280) {
+    margin: clamp(7.5rem, 12vw, 10rem) auto;
+  }
+  @include breakpoint(screen640) {
+    margin: clamp(48px, 14.2125vw, 120px) auto;
+  }
+}
+
+
+.title {
+  @include common-title(h1, $color: $white, );
+
+  display: inline-flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.subtitle {
+
+  @include common-title(hSubtitle,
+    $font-weight: $regular,
+    $line-height: 100%,
+    $color: $white);
+  text-align: center;
+  margin-top: 1.25rem;
+
+  @include breakpoint(screen768) {
+    margin-top: .75rem;
+  }
+  @include breakpoint(screen480) {
+    margin-top: .4rem;
+  }
+}
+
+/* .description {
+  @include common-paragraph(pLg,
+    $font-weight: $regular,
+    $color: $white,
+    $line-height: 130%);
+  margin-top: 2rem;
+
+  @include breakpoint(screen768) {
+    margin-top: 1.25rem;
+  }
+  @include breakpoint(screen480) {
+    margin-top: .75rem;
+  }
+}
+ */

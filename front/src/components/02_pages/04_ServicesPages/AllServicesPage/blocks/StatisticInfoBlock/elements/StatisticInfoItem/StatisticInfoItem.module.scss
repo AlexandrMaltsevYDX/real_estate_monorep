@@ -1,0 +1,83 @@
+@import '~global_styles';
+
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  @include breakpoint(screen1024) {
+    gap: 10px;
+  }
+}
+
+//
+.statContainer {
+  display: flex;
+  align-items: center;
+  //flex-wrap: wrap;
+  gap: 20px;
+
+  @include breakpoint(screen640) {
+    gap: 16px;
+  }
+  @include breakpoint(screen480) {
+    gap: 10px;
+  }
+}
+
+.statIndicator {
+  @include special-text(decorate,
+    $font-weight: $bold,
+    $color: $dark);
+  line-height: 100%;
+  text-wrap: nowrap;
+
+  &_extraBig {
+    font-size: 6.25rem; //100px;
+
+    @include breakpoint(screen1024) {
+      @include special-text(decorate,
+      $font-weight: $bold,
+      $color: $dark);
+    }
+  }
+
+
+  @include breakpoint(screen320) {
+    font-size: 40px;
+  }
+}
+
+.statLabel {
+  @include common-paragraph(pLg,
+    $color: $white);
+  background-color: $accent-green;
+  border-radius: 10px;
+  padding: 10px 20px;
+  @include breakpoint(screen1280) {
+    padding: 10px;
+  }
+}
+
+//
+.descriptionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  @include breakpoint(screen768) {
+    gap: 4px;
+  }
+}
+
+.title {
+  @include common-paragraph(pXl,
+    $line-height: 120%,
+    $color: $accent-green);
+}
+
+.description {
+  @include common-paragraph(pLg,
+    $font-weight: $regular,
+    $color: $accent-green);
+}

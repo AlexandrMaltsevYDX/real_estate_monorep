@@ -1,0 +1,116 @@
+@import '~variables';
+@import './adaptive';
+
+@mixin common-button($appearance,
+                      $padding: 9px 25px,
+                      $height: 45px) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border: none;
+  border-radius: $border-radius;
+  font-family: $ff-openSans;
+  font-size: $paragraph-md;
+  line-height: 130%;
+  text-align: center;
+  min-width: 150px;
+  height: $height;
+  padding: $padding;
+  cursor: pointer;
+
+
+  @include breakpoint(screen768) {
+    height: 40px;
+    font-size:$paragraph-md-tab;
+  }
+
+  @include breakpoint(screen576) {
+    height: 35px;
+    font-size:$paragraph-md-mob;
+    $padding: 6px 20px,
+  }
+
+
+
+  @if $appearance == colored {
+    background: $accent-green;
+    border: 1px solid $accent-green;
+    color: $white;
+    transition: all linear .2s;
+
+    &:hover {
+      background: $white;
+      color: $accent-green;
+      transition: all linear .2s;
+    }
+  }
+
+  @if $appearance == coloredReverse {
+    background: $white;
+    border: 1px solid $accent-green;
+    color: $accent-green;
+    transition: all linear .2s;
+
+    &:hover {
+      background: $accent-green;
+      color: $white;
+      transition: all linear .2s;
+    }
+  }
+
+  @if $appearance == transparent {
+    border: 1px solid $gray;
+    background-color: transparent;
+    color: $accent-green;
+    transition: all linear .2s;
+
+    &:hover {
+      background: $accent-green;
+      border: 1px solid $accent-green;
+      color: $white;
+      transition: all linear .2s;
+    }
+  }
+
+  @if $appearance == dark {
+    background: $dark;
+    color: #FFF;
+    border: 1px solid $dark;
+    transition: all linear .2s;
+
+    &:hover {
+      background: $gray-light;
+      color: $dark;
+      border: 1px solid $dark;
+      transition: all linear .2s;
+    }
+  }
+
+  @if $appearance == light {
+    background: $white;
+    color: $dark;
+    border: 1px solid $gray;
+    transition: all linear .2s;
+
+
+    &:hover {
+      background: $dark;
+      color: $white;
+      border: 1px solid $dark;
+      transition: all linear .2s;
+    }
+  }
+
+  @if $appearance == youtube {
+    background: $youtube;
+    color: $white;
+    max-height: 45px;
+  }
+
+  @if $appearance == contact {
+    max-height: 45px;
+    min-width: 0;
+    padding: 0;
+  }
+}

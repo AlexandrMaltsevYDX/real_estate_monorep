@@ -1,0 +1,37 @@
+@import '~global_styles';
+
+.wrapper {
+  grid-area: reviewsCards;
+  padding: $padding-gap;
+
+  @include breakpoint(screen1024) {
+    padding: $padding-gap-tab;
+  }
+
+  @include breakpoint(screen768) {
+    padding: $padding-gap-mob;
+  }
+
+}
+
+.container {
+  @include mainContainer();
+  @include breakpoint(screen480) {
+    padding: 0;
+  }
+}
+
+.contentContainer {
+  @include flexColumnGap($gap: 40px);
+
+  @include breakpoint(screen576) {
+    gap: 30px;
+  }
+}
+
+.paginationMargin {
+  margin-bottom: 50px;
+  @include breakpoint(screen576) {
+    margin-bottom: 30px;
+  }
+}

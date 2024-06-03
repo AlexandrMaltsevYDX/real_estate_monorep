@@ -1,0 +1,14 @@
+@import '~global_styles';
+
+
+.mainContainer {
+  @include mainPageContainer(
+    "headBlock"
+    "objectsForSale"
+    "ourServices"
+    "press"
+    "blog"
+    "partners"
+    "reviews"
+    "contacts");
+}

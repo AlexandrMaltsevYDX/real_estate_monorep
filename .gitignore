@@ -1,0 +1,180 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+**/node_modules
+**/.pnp
+**/.pnp.js
+
+# testing
+**/coverage
+
+# next.js
+**/.next/
+**/out/
+
+# production
+**/build
+
+# misc
+**/.DS_Store
+**/.pem
+
+# debug
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+
+# local env files
+**/.env*.local
+
+# vercel
+**/.vercel
+
+# typescript
+**/.tsbuildinfo
+**/next-env.d.ts
+
+**/.fig
+
+
+# Django #
+back/**/*.log
+back/**/*.pot
+back/**/*.pyc
+back/**/__pycache__
+#db.sqlite3
+back/**/media
+
+# Backup files # 
+back/**/*.bak 
+
+
+
+# If you are using PyCharm #
+back/.idea
+# User-specific stuff
+back/.idea/**/workspace.xml
+back/.idea/**/tasks.xml
+back/.idea/**/usage.statistics.xml
+back/.idea/**/dictionaries
+back/.idea/**/shelf
+
+# AWS User-specific
+back/.idea/**/aws.xml
+
+# Generated files
+back/.idea/**/contentModel.xml
+
+# Sensitive or high-churn files
+back/.idea/**/dataSources/
+back/.idea/**/dataSources.ids
+back/.idea/**/dataSources.local.xml
+back/.idea/**/sqlDataSources.xml
+back/.idea/**/dynamic.xml
+back/.idea/**/uiDesigner.xml
+back/.idea/**/dbnavigator.xml
+
+# Gradle
+back/.idea/**/gradle.xml
+back/.idea/**/libraries
+
+# File-based project format
+back/*.iws
+
+# IntelliJ
+back/out/
+
+# JIRA plugin
+back/atlassian-ide-plugin.xml
+
+# Python # 
+back/**/*.py[cod] 
+back/**/*$py.class 
+
+# Distribution / packaging 
+back/**/.Python build/ 
+back/**/develop-eggs/ 
+back/**/dist/ 
+back/**/downloads/ 
+back/**/eggs/ 
+back/**/.eggs/ 
+back/**/lib/ 
+back/**/lib64/ 
+back/**/parts/ 
+back/**/sdist/ 
+back/**/var/ 
+back/**/wheels/ 
+back/**/*.whl
+back/**/*.egg-info/ 
+back/**/.installed.cfg 
+back/**/*.egg 
+back/**/*.manifest 
+back/**/*.spec 
+
+# Installer logs 
+back/**/pip-log.txt 
+back/**/pip-delete-this-directory.txt 
+
+# Unit test / coverage reports 
+back/**/htmlcov/ 
+back/**/.tox/ 
+back/**/.coverage 
+back/**/.coverage.* 
+back/**/.cache 
+back/**/.pytest_cache/ 
+back/**/nosetests.xml 
+back/**/coverage.xml 
+back/**/*.cover 
+back/**/.hypothesis/ 
+
+# Jupyter Notebook 
+back/**/.ipynb_checkpoints 
+
+# pyenv 
+back/**/.python-version 
+
+# celery 
+back/**/celerybeat-schedule.* 
+
+# SageMath parsed files 
+back/**/*.sage.py 
+
+# Environments 
+back/**/.env
+back/**/.env.local
+back/**/.venv 
+back/**/env/ 
+back/**/venv/ 
+back/**/ENV/ 
+back/**/env.bak/ 
+back/**/venv.bak/
+back/**/staticroot
+
+# mkdocs documentation 
+back/**/site 
+
+# mypy 
+back/**/.mypy_cache/ 
+
+
+
+# sftp configuration file 
+back/**/sftp-config.json 
+
+# Package control specific files Package 
+back/**/Control.last-run 
+back/**/Control.ca-list 
+back/**/Control.ca-bundle 
+back/**/Control.system-ca-bundle 
+back/**/GitHub.sublime-settings 
+
+# Visual Studio Code # 
+back/**/.vscode/* 
+back/**/!.vscode/settings.json 
+back/**/!.vscode/tasks.json 
+back/**/!.vscode/launch.json 
+back/**/!.vscode/extensions.json 
+back/**/.history
+
+# db.sqlite3
+back/**/node_modules/

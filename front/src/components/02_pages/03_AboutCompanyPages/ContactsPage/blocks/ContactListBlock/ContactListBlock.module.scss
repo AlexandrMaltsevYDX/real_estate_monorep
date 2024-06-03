@@ -1,0 +1,40 @@
+@import '~global_styles';
+
+.wrapper {
+  grid-area: contactsList;
+  padding: $padding-gap;
+
+  @include breakpoint(screen1024) {
+    padding: $padding-gap-tab;
+  }
+
+  @include breakpoint(screen768) {
+    padding: $padding-gap-mob;
+  }
+}
+
+.container {
+  @include mainContainer();
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 90px;
+
+  @include breakpoint(screen1280) {
+    gap: 60px 40px;
+  }
+
+  @include breakpoint(screen1024) {
+    grid-template-columns: auto;
+    justify-content: center;
+    gap: 50px;
+  }
+
+  @include breakpoint(screen768) {
+    gap: 40px;
+  }
+
+/*   @include breakpoint(screen576) {
+  gap: 25px;
+  } */
+
+}

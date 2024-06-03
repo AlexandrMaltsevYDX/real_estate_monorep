@@ -1,0 +1,58 @@
+@import '~global_styles';
+
+.labelContainer {
+  display: inline-flex;
+  align-items: center;
+
+  padding-bottom: 2rem;
+
+  gap: .5rem;
+  max-width: 80vw;
+
+  @include breakpoint(screen576) {
+    padding-bottom: 1rem;
+    row-gap: 0;
+  }
+
+  @include breakpoint(screen480) {
+    flex-wrap: wrap;
+  }
+}
+
+.label {
+
+  @include common-paragraph(p,
+    $color: $dark,
+    $font-family: $ff-openSans,
+    $font-weight: $regular);
+  transition: all .3s linear;
+
+  &_link {
+    @extend .label;
+    text-decoration: none;
+    transition: all .3s linear;
+    width: max-content;
+    flex-basis:content;
+    flex-grow: 4;
+    text-wrap: nowrap;
+
+    &:hover {
+      color: $gray;
+      text-decoration: none;
+      transition: all .3s linear;
+    }
+  }
+
+  &_span {}
+
+  &_name {
+    flex-shrink: 4;
+    color: $accent-green;
+    overflow: hidden;
+    /* Обрезает содержимое, которое не помещается */
+    text-overflow: ellipsis;
+    /* Добавляет многоточие в конце обрезанного текста */
+    white-space: nowrap;
+    /* Предотвращает перенос текста на новую строку */
+  }
+}

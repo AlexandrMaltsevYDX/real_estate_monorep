@@ -1,0 +1,23 @@
+@import '~global_styles';
+
+.wrapper {
+  overflow: hidden;
+  grid-area: main-catalog;
+  z-index: 0;
+  position: relative;
+  border-bottom: 1px solid $gray;
+  padding: $padding-gap;
+
+  @include breakpoint(screen1024) {
+    padding: $padding-gap-tab;
+  }
+
+  @include breakpoint(screen768) {
+    padding: $padding-gap-mob;
+  }
+}
+
+.container {
+  @include mainContainer();
+  z-index: 1;
+}

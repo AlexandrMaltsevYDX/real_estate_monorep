@@ -1,0 +1,84 @@
+@import '~global_styles';
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include breakpoint(screen768) {
+    gap: clamp(10px, 2.3688vw, 20px);;
+  }
+}
+
+.title {
+  @include common-title(hSmall,
+    $color: $white);
+}
+
+.description {
+
+  @include common-paragraph(p,
+    $font-weight: $regular,
+    $color: $white,
+    $font-family: $ff-openSans);
+
+}
+
+.fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+  border: none;
+}
+
+.mainForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  @include breakpoint(screen960) {
+    flex-direction: row;
+  }
+  @include breakpoint(screen576) {
+    flex-direction: column;
+  }
+}
+
+.label {
+  width: 100%;
+}
+
+.input {
+  @include common-input;
+  width: 100%;
+  padding: 10px 30px;
+  height: 45px;
+
+  @include breakpoint(screen768) {
+    height: 40px;
+  }
+
+  @include breakpoint(screen576) {
+    height: 35px;
+  }
+}
+
+.textarea {
+  @include common-input;
+  width: 100%;
+  resize: vertical;
+  min-height: 140px;
+  max-height: 200px;
+  padding: 10px 30px;
+}
+
+.button {
+  @include common-button(colored);
+  width: fit-content;
+
+  @include breakpoint(screen768) {
+    padding: 7px 20px;
+  }
+}
+

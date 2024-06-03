@@ -1,0 +1,26 @@
+@import '~global_styles';
+
+.wrapper {
+  @include flexColumnGap($gap: 20px);
+
+  @include breakpoint(screen576) {
+    gap: 10px;
+  }
+}
+
+.employeesArea {
+  grid-area: employees;
+}
+
+.ownersArea {
+  grid-area: partners;
+  margin-bottom: 20px;
+
+  @include breakpoint(screen576) {
+    margin-bottom: 10px;
+  }
+}
+
+.allArea {
+  grid-area: team;
+}

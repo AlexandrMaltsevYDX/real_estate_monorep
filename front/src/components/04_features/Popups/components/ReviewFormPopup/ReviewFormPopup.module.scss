@@ -1,0 +1,13 @@
+@import '~global_styles';
+
+.innerContainer h3,
+.innerContainer p,
+.innerContainer span,
+.innerContainer span * {
+  color: $dark
+}
+.popupForm {
+  @include breakpoint(screen960) {
+    flex-direction: column !important;
+  }
+}

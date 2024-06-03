@@ -1,0 +1,55 @@
+@import '~global_styles';
+
+
+.wrapper {
+  box-sizing: border-box;
+  border: 1px solid $gray;
+  padding: 40px;
+  display: grid;
+  row-gap: 20px;
+  column-gap: 40px;
+  grid-template-columns: 3fr auto;
+  grid-template-areas:
+    "info info"
+    "text original";
+
+
+    @include breakpoint(screen768) {
+      column-gap: 20px;
+      grid-template-columns: 3fr 180px;
+    }
+
+    @include breakpoint(screen640) {
+      padding: 30px 20px;
+      row-gap: 16px;
+      grid-template-columns: auto;
+      grid-template-areas:
+      "info"
+      "text "
+      "original";
+    }
+
+    @include breakpoint(screen480) {
+      padding: 30px $padding-side-tab;;
+    }
+}
+
+
+.infoContainer {
+  grid-area: info;
+}
+
+.reviewText {
+  grid-area: text;
+  @include common-paragraph(p,
+    $font-weight: $regular);
+
+}
+
+
+.buttonsContainer {
+  grid-area: original;
+  @include flexColumnGap($gap: 20px);
+  align-items: center;
+}
+

@@ -1,0 +1,10 @@
+@import '~global_styles';
+
+.mainContainer {
+  @include mainPageContainer(
+    "aboutUs"
+    "partners"
+    "video"
+    "advantages"
+    "team");
+}

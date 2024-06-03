@@ -1,0 +1,32 @@
+@import '~global_styles';
+
+
+.wrapper {
+  grid-area: blog;
+  position: relative;
+  padding: $padding-gap;
+
+  @include breakpoint(screen1024) {
+    padding: $padding-gap-tab;
+  }
+
+  @include breakpoint(screen768) {
+    padding: $padding-gap-mob;
+  }
+}
+
+.container {
+  @include mainContainer();
+  @include flexColumnGap;
+
+  @include breakpoint(screen768) {
+    gap: 30px;
+  }
+  @include breakpoint(screen576) {
+    gap: 24px;
+  }
+}
+
+.title {
+  @include common-title(hTitle);
+}

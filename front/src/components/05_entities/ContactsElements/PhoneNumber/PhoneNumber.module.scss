@@ -1,0 +1,141 @@
+@import '~global_styles';
+
+.callLink {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-wrap: nowrap;
+  @include common-link;
+
+  @include breakpoint(screen576) {
+    gap: .5rem;
+
+  }
+
+  &_white {
+    color: $white;
+    & .callIcon {
+      border-radius: 50%;
+      background-color: $white;
+      border: 1px solid $white;
+      transition: all 0.2s linear;
+    }
+
+    &:hover {
+      transition: all 0.2s linear;
+      color: $gray-light;
+      & svg {
+        fill: $gray-light;
+      }
+
+      & .callIcon {
+        border: 1px solid $gray-light;
+        background-color: transparent;
+        transition: all 0.2s linear;
+      }
+    }
+  }
+
+  &_gray {
+    color: $gray-dark;
+
+    &:hover {
+      color: $accent-green;
+      transition: all 0.2s linear;
+
+      & svg {
+        fill: $white;
+      }
+
+      & .callIcon {
+        border: 1px solid $accent-green;
+        background-color: $accent-green;
+        transition: all 0.2s linear
+      }
+    }
+  }
+
+  &_green {
+    color: $accent-green;
+    & svg {
+      fill: $accent-green;
+    }
+
+    &:hover {
+      color: $accent-green-hover;
+      transition: all 0.2s linear;
+
+      & svg {
+        fill: $white;
+      }
+
+      & .callIcon {
+        border: 2px solid $accent-green;
+        background-color: $accent-green;
+        transition: all 0.2s linear;
+      }
+    }
+  }
+
+  &_black {
+    color: $dark;
+    & svg {
+      fill: $accent-green;
+    }
+
+    &:hover {
+      color: $accent-green;
+      transition: all 0.2s linear;
+
+      & svg {
+        fill: $white;
+      }
+
+      & .callIcon {
+        border: 1px solid $accent-green;
+        background-color: $accent-green;
+        transition: all 0.2s linear;
+      }
+    }
+  }
+}
+
+
+.callIcon {
+  border-radius: 50%;
+  box-sizing: border-box;
+  display: inline-flex;
+  background-color: transparent;
+  transition: background-color 0.2s linear;
+
+  & svg {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+@include breakpoint(screen576) {
+  & svg {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+  &_white {
+    border: 1px $white solid;
+  }
+
+  &_gray {
+    border: 1px $gray solid;
+  }
+
+  &_green {
+    border: 2px $accent-green solid;
+  }
+
+  &_black {
+    border: 1px $accent-green solid;
+  }
+}

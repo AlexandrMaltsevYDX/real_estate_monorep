@@ -1,0 +1,75 @@
+@import '~global_styles';
+
+.scrollToTopButton {
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+
+  box-sizing: border-box;
+  width: 45px;
+  height: 45px;
+
+  cursor: pointer;
+  z-index: 1;
+  border-radius: 50%;
+  background-color: $white;
+  border: 2px solid $accent-green;
+  opacity: 0;
+  visibility: hidden;
+
+  transition: all .3s linear;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & svg {
+    stroke: $accent-green;
+    transition: all .3s linear;
+    transform: rotate(180deg);
+  }
+
+  @include breakpoint(screen1280) {
+    width: 40px;
+    height: 40px;
+    right: .5rem;
+
+
+  }
+
+  @include breakpoint(screen960) {
+    width: 38px;
+    height: 38px;
+    & svg {
+      width: 18px;
+    }
+  }
+
+  @include breakpoint(screen640) {
+    width: 35px;
+    height: 35px;
+  }
+
+
+  &:hover {
+    cursor: pointer;
+    background-color: $accent-green;
+
+
+    & svg {
+      stroke: $white;
+      transform: translateY(-5px) rotate(180deg);
+      transition: transform .3s linear;
+    }
+  }
+
+
+}
+
+
+.scrollToTopButton.show {
+  opacity: 1;
+  visibility: visible;
+  bottom: 30px;
+  transition: all .3s linear;
+}

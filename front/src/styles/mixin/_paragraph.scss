@@ -1,0 +1,93 @@
+@import '~variables';
+@import './adaptive';
+
+@mixin common-paragraph(
+                    $pTag,
+                    $font-family: $ff-gothamPro,
+                    $font-size: $paragraph-md,
+                    $font-weight: $medium,
+                    $line-height: 110%,
+                    $margin: 0,
+                    $color: $dark,
+                    $font-style: normal)  {
+
+    @if $pTag == pXl {
+      font-family: $font-family; // Gotham Pro
+      font-size: $paragraph-xl;  // 28px
+      font-weight: $font-weight; // medium - 500
+      line-height: $line-height; // 110%,
+      margin: $margin;
+      color: $color;
+      font-style: $font-style;
+
+
+      @include breakpoint(screen1024) {
+        font-size: clamp($paragraph-xl-tab, 2.92969vw, $paragraph-xl); // 24px 28px
+      }
+      @include breakpoint(screen768) {
+        font-size: clamp($paragraph-xl-mob, 3.9625vw, $paragraph-xl-tab);   // 18px 24px
+      }
+    }
+
+    @if $pTag == pLg {
+      font-family: $font-family; // Gotham Pro
+      font-size: $paragraph-lg;  // 24px
+      font-weight: $font-weight; // medium - 500
+      line-height: 120%;
+      margin: $margin;
+      color: $color;
+      font-style: $font-style;
+
+      @include breakpoint(screen1024) {
+        font-size: clamp($paragraph-lg-tab, 2.47396vw, $paragraph-lg);// 20px 24px
+      }
+      @include breakpoint(screen768) {
+        font-size: clamp($paragraph-lg-mob, 3.43542vw, $paragraph-lg-tab);// 16px 20px
+      }
+    }
+
+    @if $pTag == p {
+      font-family: $font-family; // Gotham Pro
+      font-size: $paragraph-md; // 18px
+      font-weight: $font-weight; // medium - 500
+      line-height: 140%;
+      margin: $margin;
+      color: $color;
+      font-style: $font-style;
+
+      @include breakpoint(screen1024) {
+        font-size: clamp($paragraph-md-tab, 1.92057vw, $paragraph-md);  // 16px 18px
+      }
+      @include breakpoint(screen768) {
+        font-size: clamp($paragraph-md-mob, 2.90833vw, $paragraph-md-tab);  //14px 16px
+      }
+
+      @include breakpoint(screen480) {
+        text-align: justify;
+      }
+    }
+
+    @if $pTag == pSm {
+      font-family: $font-family; // Gotham Pro
+      font-size: $paragraph-small; // 12px
+      font-weight: $font-weight; // medium - 500
+      line-height: 150%;
+      margin: $margin;
+      color: $color;
+      font-style: $font-style;
+
+      @include breakpoint(screen1024) {
+        font-size: clamp($paragraph-small-tab, 1.1vw, $paragraph-small);  // 16px 18px
+      }
+    }
+
+/*     @if $pTag == link {
+      font-family: $font-family; // Gotham Pro
+      font-size: $fs-navLink; // 13px
+      font-weight: $font-weight; // medium - 500
+      line-height: 150%;
+      margin: $margin;
+      color: $color;
+      font-style: $font-style;
+    } */
+}

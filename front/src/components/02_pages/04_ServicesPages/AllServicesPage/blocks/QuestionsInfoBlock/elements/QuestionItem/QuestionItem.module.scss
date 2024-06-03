@@ -1,0 +1,38 @@
+@import '~global_styles';
+
+.questionItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+
+
+  &__iconContainer {
+    display: flex;
+
+    & svg {
+      width: 60px;
+      height: 60px;
+
+      @include breakpoint(screen768) {
+        width: 45px;
+        height: 45px;
+      }
+      @include breakpoint(screen576) {
+        width: 35px;
+        height: 35px;
+      }
+    }
+  }
+
+  &__question {
+    @include common-paragraph(pLg,
+      $font-weight: $regular,
+      $color: $white);
+    padding-top: 20px;
+
+    @include breakpoint(screen1024) {
+      padding-top: 0;
+      margin: auto 0;
+    }
+  }
+}

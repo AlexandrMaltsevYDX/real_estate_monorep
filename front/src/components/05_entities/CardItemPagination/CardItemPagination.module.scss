@@ -1,0 +1,91 @@
+@import '~global_styles';
+
+.paginationContainer {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+
+  @include breakpoint(screen768) {
+    gap: 8px;
+  }
+}
+
+.buttonPagination {
+/*   position: relative;
+  z-index: 1; */
+  cursor: pointer;
+  width: 45px;
+  height: 45px;
+  box-sizing: border-box;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: $dark;
+  text-align: center;
+  font-size: $paragraph-lg;
+  font-weight: $medium;
+  line-height: 130%;
+
+  border: 1px solid $dark;
+  border-radius: 50%;
+  background-color: $white;
+
+  @include breakpoint(screen768) {
+    font-size: $paragraph-lg-tab;
+    width: 40px;
+    height: 40px;
+  }
+  @include breakpoint(screen576) {
+    font-size: $paragraph-lg-mob;
+    width: 35px;
+    height: 35px;
+  }
+
+  &__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    & svg {
+      width: 22px;
+      height: 8px;
+      transition: transform .3s linear;
+
+      @include breakpoint(screen576) {
+        width: 60%;
+        height: 60%;
+      }
+
+    }
+
+    &_prev svg {
+      transform: rotate(180deg);
+    }
+
+    &_next {
+
+    }
+  }
+
+
+
+}
+
+.active {
+  cursor: default;
+  color: $white;
+  background-color: $accent-green;
+  border: 1px solid $accent-green;
+}
+
+.disabled {
+  border: 1px solid $gray;
+  background-color: $white;
+  cursor: default;
+  & svg path {
+    fill: $gray;
+    stroke: $gray;
+  }
+}

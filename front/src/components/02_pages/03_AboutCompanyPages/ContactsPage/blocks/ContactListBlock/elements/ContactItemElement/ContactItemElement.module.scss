@@ -1,0 +1,115 @@
+@import '~global_styles';
+
+.contactContainer {
+  display: grid;
+  grid-template-columns: 100px auto;
+  gap: 30px;
+
+/*   box-sizing: border-box;
+  display: flex;
+  flex-direction: column; */
+  @include breakpoint(screen1280){
+    grid-template-columns: 90px auto;
+    gap: 20px;
+  }
+  @include breakpoint(screen1024){
+    max-width: 700px;
+    grid-template-columns: 120px auto;
+    gap: 40px;
+  }
+  @include breakpoint(screen768) {
+    grid-template-columns: clamp(70px, 17.1458vw, 120px) auto;
+    max-width: none;
+    gap: 30px;
+  }
+
+  @include breakpoint(screen576) {
+    gap: 24px;
+  }
+  @include breakpoint(screen480) {
+    gap: 20px;
+  }
+}
+
+.avatar {
+  background-color: $gray;
+  width: 100%;
+  max-width: 100px;
+  height: 100%;
+  max-height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  @include breakpoint(screen1280){
+    max-width: 90px;
+    max-height: 90px;
+  }
+  @include breakpoint(screen1024){
+    max-width: 120px;
+    max-height: 120px;
+  }
+  @include breakpoint(screen768) {
+    width: clamp(70px, 17.1458vw, 120px);
+    height: clamp(70px, 17.1458vw, 120px);
+  }
+
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  height: 100%;
+
+  @include breakpoint(screen768) {
+    gap: 14px;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    @include breakpoint(screen768) {
+      gap: 4px;
+    }
+  }
+
+  &__name {
+    @include common-paragraph(pXl,
+    $font-weight: $bold);
+  }
+
+  &__jobTitle {
+    @include common-paragraph(p,
+    $font-weight: $regular);
+  }
+
+  &__location {
+    @include common-paragraph(p,
+    $font-weight: $bold);
+
+    display: inline-flex;
+    gap: 13px;
+    align-items: center;
+
+    &_icon {
+      display: flex;
+    }
+  }
+}
+
+.phoneNumber {
+  @include common-paragraph(pLg,
+  $font-weight: $bold);
+}
+
+.messengersContainer {
+  display: flex;
+  gap: 10px;
+
+  @include breakpoint(screen480) {
+    flex-wrap: wrap;
+
+  }
+}

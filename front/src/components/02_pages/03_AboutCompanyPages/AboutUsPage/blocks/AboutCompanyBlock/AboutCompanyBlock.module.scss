@@ -1,0 +1,39 @@
+@import '~global_styles';
+
+.wrapper {
+  grid-area: aboutUs;
+  position: relative;
+/*   z-index: 1; */
+  padding: $padding-gap;
+
+  @include breakpoint(screen1024) {
+    padding: $padding-gap-tab;
+  }
+
+  @include breakpoint(screen768) {
+    padding: $padding-gap-mob;
+  }
+}
+
+
+.container {
+  @include mainContainer();
+  @include flexColumnGap($gap: 50px);
+
+  @include breakpoint(screen1024) {
+    gap: 30px;
+  }
+
+  @include breakpoint(screen576) {
+gap: 24px;
+  }
+}
+
+
+.title {
+  @include common-title(h1);
+}
+
+.subtitle {
+  @include common-title(hSubtitle);
+}

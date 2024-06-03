@@ -1,0 +1,80 @@
+@import '~global_styles';
+
+.link {
+  @include common-link;
+  @include common-button(transparent,
+    $padding: 9px 0);
+  min-width: 180px;
+}
+
+.buttonText {
+  padding: 0 15px;
+
+
+  @include breakpoint(screen768) {
+    padding: 0 10px;
+  }
+
+  @include breakpoint(screen480) {
+    padding: 0 4px;
+  }
+}
+
+.icon {
+  box-sizing: border-box;
+  width: 36.82px;
+  height: 36.82px;
+  min-width: 35px;
+  min-height: 35px;
+  margin: 4px 4px 4px 14px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include breakpoint(screen768) {
+    min-width: 30px;
+    min-height: 30px;
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+  }
+
+  @include breakpoint(screen576) {
+    min-width: 25px;
+    min-height: 25px;
+    width: 25px;
+    height: 25px;
+  }
+
+  @include breakpoint(screen480) {
+    margin-left: 6px;
+  }
+
+  &_cian {
+    background-color: $cian;
+    border: 1px solid $cian;
+  }
+
+  &_yandex {
+    background-color: $white;
+    border: 1px solid $gray;
+  }
+
+  & svg {
+
+    width: 80%;
+    height: 80%;
+    border-radius: 20%;
+
+    @include breakpoint(screen768) {
+      width: 70%;
+      height: 70%;
+    }
+
+    @include breakpoint(screen576) {
+      width: 60%;
+      height: 60%;
+    }
+  }
+}

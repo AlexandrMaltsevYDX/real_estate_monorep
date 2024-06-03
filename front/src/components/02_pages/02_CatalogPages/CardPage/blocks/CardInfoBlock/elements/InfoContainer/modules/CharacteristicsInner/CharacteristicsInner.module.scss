@@ -1,0 +1,82 @@
+@import '~global_styles';
+
+.title {
+  @include common-title(hSmall);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+
+  gap: 40px;
+
+  @include breakpoint(screen768) {
+    gap: 28px;
+  }
+
+  @include breakpoint(screen640) {
+    gap: 0;
+    grid-template-columns: auto;
+  }
+}
+
+.blockInfo {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+
+  @include breakpoint(screen1024) {
+    margin-top: 24px;
+  }
+
+
+  @include breakpoint(screen640) {
+    gap: .8rem;
+  }
+}
+
+.label {
+  @include common-paragraph(p,
+    $font-weight: $bold,
+    $font-family: $ff-openSans,
+    $color: $white);
+
+  background-color: $accent-gray;
+  padding: 0 20px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+
+  @include breakpoint(screen768) {
+    padding: 0 15px;
+    height: 35px;
+  }
+  @include breakpoint(screen576) {
+    padding: 0 10px;
+    height: 30px;
+  }
+}
+
+.list {
+  @include common-ul;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.listItem {
+  @include common-li;
+  @include common-paragraph(p,
+    $font-weight: $regular,
+    $font-family: $ff-openSans);
+
+    @include breakpoint(screen480) {
+      text-align: start;
+    }
+
+  &__spanAccent {
+    font-weight: $bold;
+  }
+}

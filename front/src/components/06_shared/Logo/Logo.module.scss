@@ -1,0 +1,87 @@
+@import '~global_styles';
+
+.logo {
+  flex-shrink: 3;
+  display: inline-flex;
+  text-decoration: none;
+  align-items: center;
+  gap: 20px;
+
+  @include breakpoint(screen1024) {
+    gap: 10px;
+  }
+
+  & svg {
+    display: flex;
+    width: min-content;
+    object-fit: contain;
+    height: 60px;
+
+    @include breakpoint(screen1024) {
+      max-width: 60px;
+      height: 40px;
+    }
+  }
+
+}
+
+
+.name {
+  @include common-paragraph(pLg,
+    $color: $accent-green,
+    $font-weight: $bold,
+    $font-family: $ff-openSans);
+  text-decoration: none;
+  text-wrap: wrap;
+  //max-width: 240px;
+
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+
+  @include breakpoint(screen1024) {
+    font-size: 16px;
+  }
+
+  @include breakpoint(screen768) {
+    display: none;
+  }
+
+  &_gray {
+    color: $gray;
+
+    & svg  {
+
+      & path {
+        fill: $gray;
+    }
+  }
+    @include breakpoint(screen768) {
+      display: block;
+      width: max-content;
+      //transform: scale(.9);
+    }
+
+    @include breakpoint(screen480) {
+      display: none;
+    }
+  }
+}
+
+.span {
+  font-size: 12px;
+  font-weight: $light;
+  color: $accent-gray;
+  line-height: 100%;
+  padding: 0;
+  margin: 0;
+  text-align: justify;
+  letter-spacing: 6px;
+
+  @include breakpoint(screen1024) {
+    letter-spacing: 2px;
+  }
+  @include breakpoint(screen960) {
+letter-spacing: 1px;
+  }
+}

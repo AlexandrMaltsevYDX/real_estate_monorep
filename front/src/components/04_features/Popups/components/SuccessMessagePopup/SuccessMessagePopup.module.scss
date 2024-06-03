@@ -1,0 +1,19 @@
+@import '~global_styles';
+
+.innerContainer {
+  @include flexColumnGap($gap: 20px);
+
+  @include breakpoint(screen576) {
+    margin-right: 30px;
+  }
+}
+
+.title {
+  @include common-title(hSmall);
+}
+
+.subtitle {
+  @include common-paragraph(p,
+  $font-weight: $regular,
+  $font-size: $ff-openSans);
+}

@@ -1,0 +1,81 @@
+@import '~global_styles';
+
+.footerWrapper {
+  grid-area: footer;
+  border-top: 1px solid $gray;
+  padding: $padding-gap;
+
+  @include breakpoint(screen1024) {
+    padding: $padding-gap-tab;
+  }
+
+  @include breakpoint(screen768) {
+    padding: $padding-gap-mob;
+  }
+}
+
+.container {
+  @include mainContainer();
+  display: grid;
+  align-items: start;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "logo logo"
+    "nav contacts";
+  gap: 45px;
+
+  @include breakpoint(screen768) {
+    gap: 45px 30px;
+  }
+
+
+  @include breakpoint(screen576) {
+    gap: 30px 0;
+    grid-template-columns: auto auto;
+    grid-template-areas:
+      "logo tel"
+      "nav nav"
+      "contacts contacts";
+  }
+
+  @include breakpoint(screen480) {
+    gap: 24px;
+  }
+
+}
+
+
+.logoContainer {
+  grid-area: logo;
+  display: block;
+
+  & svg {
+    & path:first-of-type {
+      fill: $accent-gray;
+    }
+  }
+
+  @include breakpoint(screen576) {
+    width: 80px;
+  }
+}
+
+.phone {
+  display: none;
+  @include common-paragraph(p,
+    $font-weight: $bold,
+    $color: $gray-dark);
+  text-decoration: none;
+
+  @include breakpoint(screen576) {
+    display: flex;
+    justify-content: flex-end;
+    align-self: center;
+    text-wrap: nowrap;
+  }
+
+  &:hover {
+    color: $accent-green;
+  }
+
+}

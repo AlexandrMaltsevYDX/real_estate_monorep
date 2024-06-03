@@ -1,0 +1,8 @@
+@import '~global_styles';
+
+.mainContainer {
+  @include mainPageContainer(
+    "search-bar"
+    "card"
+    "moreObjects")
+}

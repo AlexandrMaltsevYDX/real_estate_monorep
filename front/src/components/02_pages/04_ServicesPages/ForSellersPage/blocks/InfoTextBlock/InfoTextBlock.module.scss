@@ -1,0 +1,137 @@
+@import '~global_styles';
+
+.wrapper {
+  grid-area: infoText;
+  background-image: url('../../../../../../../public/img/servicesPages/forSellersPage/infoBlockBG.jpg');
+  background-color: $dark;
+  background-position: center center;
+  background-size: cover;
+  padding: $padding-gap;
+
+  @include breakpoint(screen1024) {
+    padding: $padding-gap-tab;
+  }
+
+  @include breakpoint(screen768) {
+    padding: $padding-gap-mob;
+  }
+  @include breakpoint(screen576) {
+    background-image: url('../../../../../../../public/img/servicesPages/forSellersPage/infoBlockBG-450px.jpg');
+    background-position: center center;
+  }
+}
+
+.container {
+  @include mainContainer();
+  @include flexColumnGap($gap: 40px);
+
+  @include breakpoint(screen768) {
+    gap: 30px;
+  }
+  @include breakpoint(screen576) {
+    gap: 25px;
+  }
+}
+
+
+///titleContainer///
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+
+  @include breakpoint(screen1024) {
+    gap: 1rem;
+  }
+}
+
+.title {
+  @include common-title(hSmall,
+    $color: $white);
+}
+
+.subtitle {
+  @include common-paragraph(p,
+    $color: $white,
+    $font-family: $ff-openSans,
+    $font-weight: $regular);
+}
+
+
+///quoteContainer///
+.quoteContainer {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+
+  @include breakpoint(screen768) {
+    flex-direction: column;
+    gap: 30px;
+  }
+  @include breakpoint(screen576) {
+    gap: 25px;
+  }
+}
+
+
+.innerAuthor {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+
+  @include breakpoint(screen768) {
+    gap: 20px;
+  }
+}
+
+.authorAvatar {
+  max-width: 80px;
+  max-height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+
+  @include breakpoint(screen768) {
+    width: 70px;
+    height: 70px;
+  }
+
+  @include breakpoint(screen576) {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.authorName {
+  @include common-paragraph(pXl,
+    $color: $white,
+    $font-weight: $bold,
+    $line-height: 120%);
+  text-wrap: nowrap;
+}
+
+.innerQuote {
+  padding-top: 1.4rem;
+
+  @include breakpoint(screen768) {
+    padding-top: 0;
+  }
+}
+
+.quote {
+  @include common-paragraph(p,
+    $color: $white,
+    $font-weight: $regular,
+    $line-height: 130%,
+    $font-style: italic);
+}
+
+.quoteSpan {
+  @extend .quote;
+  font-weight: $bold;
+  display: block;
+  padding-top: 1.4rem;
+
+  @include breakpoint(screen768) {
+    padding-top: 1.2rem;
+  }
+}

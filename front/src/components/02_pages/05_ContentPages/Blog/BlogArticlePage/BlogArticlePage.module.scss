@@ -1,0 +1,34 @@
+@import '~global_styles';
+
+.wrapper {
+  grid-area: blogInner;
+  padding: $padding-gap;
+
+  @include breakpoint(screen1024) {
+    padding: $padding-gap-tab;
+  }
+
+  @include breakpoint(screen768) {
+    padding: $padding-gap-mob;
+  }
+}
+
+.container {
+  @include mainContainer();
+  @include flexColumnGap($gap: 70px);
+
+  @include breakpoint(screen1024) {
+    gap: clamp(50px, 6.67vw, 70px);
+  }
+
+  @include breakpoint(screen768) {
+    gap: clamp(30px, 6.5vw, 50px);
+  }
+}
+
+.cardBlogContainer {
+  @include breakpoint(screen1024) {
+
+  }
+}
+

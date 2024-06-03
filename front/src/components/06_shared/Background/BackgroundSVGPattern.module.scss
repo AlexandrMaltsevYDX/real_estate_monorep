@@ -1,0 +1,41 @@
+@import '~global_styles';
+
+
+.background {
+  width: 100%;
+  background-size: cover;
+  z-index: -10;
+
+
+
+  @include breakpoint(screen1024) {
+    display: none;
+  }
+
+  & svg {
+    position: absolute;
+    overflow: hidden;
+    z-index: -10;
+  }
+}
+
+.background_top svg {
+  top: 0;
+}
+
+.background_bottom svg {
+  bottom: 0;
+}
+
+.background_left svg {
+  left: 0;
+}
+
+.background_right svg {
+  right: 0;
+}
+
+.background_center svg {
+  top: 50%;
+  transform: translateY(-50%);
+}

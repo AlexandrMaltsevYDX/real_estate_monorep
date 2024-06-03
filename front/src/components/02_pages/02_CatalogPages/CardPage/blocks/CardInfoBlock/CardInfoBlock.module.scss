@@ -1,0 +1,46 @@
+@import '~global_styles';
+
+.wrapper {
+  grid-area: card;
+  position: relative;
+
+  border-bottom: 1px solid $gray;
+  padding: $padding-gap;
+
+  @include breakpoint(screen1024) {
+    padding: $padding-gap-tab;
+  }
+
+  @include breakpoint(screen768) {
+    padding: $padding-gap-mob;
+  }
+}
+
+.mainContainer {
+  @include mainContainer();
+
+  display: grid;
+  grid-template-columns: minmax(680px, 1100px) minmax(350px, 520px);
+  gap: 40px;
+  grid-template-areas:
+    "title title"
+    "photo price"
+    "info price";
+
+  @include breakpoint(screen1280) {
+    grid-template-columns: minmax(200px, 1100px) 350px;
+  }
+
+  @include breakpoint(screen1024) {
+    grid-template-columns: minmax(240px, 1024px);
+    grid-template-areas:
+      "title"
+      "photo"
+      "price"
+      "info";
+  }
+
+  @include breakpoint(screen640) {
+    gap: 30px;
+  }
+}

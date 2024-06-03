@@ -1,0 +1,83 @@
+@import '~global_styles';
+
+.imageInfoButton {
+  max-height: 45px;
+  display: inline-flex;
+  @include common-button($appearance: youtube,
+                          $padding: 0 0 0 20px);
+  text-align: center;
+  font-size: 22px;
+  font-weight: $regular;
+  min-width: 0;
+
+  @include breakpoint(screen768) {
+    padding: 0 0 0 16px;
+  }
+
+
+  &:hover {
+    & .icon {
+      background-color: $youtube;
+    }
+
+
+    & svg {
+      transition: background-color .3s linear, scale .3s ease;
+      fill: $white;
+      background-color: $youtube;
+      scale: 1.5;
+
+
+      @include breakpoint(screen768) {
+        scale: 1.2;
+      }
+    }
+  }
+
+
+}
+.icon {
+    width: 35px;
+    height: 35px;
+    margin: 5px 5px 5px 15px;
+    border-radius: 50%;
+    background-color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+
+    @include breakpoint(screen768) {
+      margin: 5px 5px 5px 10px;
+      width: 30px;
+      height: 30px;
+    }
+
+/*     &:hover {
+      background-color: $youtube;
+
+
+
+      & svg {
+        transition: all .3s linear;
+        background-color: $youtube;
+        fill: $white;
+        scale: 1.5;
+      }
+    } */
+
+    & svg {
+      transition: scale .3s linear;
+      background-color: $white;
+      width: 20px;
+      height: 14px;
+
+
+      @include breakpoint(screen768) {
+
+      }
+    }
+  }
+
+

@@ -1,0 +1,34 @@
+@import '~global_styles';
+
+.wrapper {
+  grid-area: servicesStories;
+  padding: $padding-gap;
+  border-bottom: 1px solid $gray;
+
+
+  @include breakpoint(screen1024) {
+    padding: $padding-gap-tab;
+  }
+
+  @include breakpoint(screen768) {
+    padding: $padding-gap-mob;
+  }
+}
+
+.container {
+  @include mainContainer();
+
+  @include flexColumnGap($gap: 50px);
+
+}
+
+.title {
+  @include common-title(hTitle);
+}
+
+.innerContainer {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(320px, 1fr));
+  grid-auto-rows: minmax(400px, 640px);
+  gap: 50px;
+}

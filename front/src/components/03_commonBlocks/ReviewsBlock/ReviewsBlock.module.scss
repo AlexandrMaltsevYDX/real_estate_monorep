@@ -1,0 +1,55 @@
+@import '~global_styles';
+
+
+.wrapper {
+  grid-area: reviews;
+  padding: $padding-gap;
+
+  @include breakpoint(screen1024) {
+    padding: $padding-gap-tab;
+  }
+
+  @include breakpoint(screen768) {
+    padding: $padding-gap-mob;
+  }
+}
+
+.container {
+  @include mainContainer();
+  @include flexColumnGap;
+
+  @include breakpoint(screen768) {
+    gap: 30px;
+  }
+}
+
+.contentContainer {
+  @include scrollbar($arrows: false);
+  min-width: 0;
+  max-width: 100%;
+  overflow: auto;
+  overflow-x: auto;
+  padding-bottom: 50px;
+
+  @include breakpoint(screen960) {
+    padding-bottom: 30px;
+  }
+  @include breakpoint(screen576) {
+    padding-bottom: 20px;
+  }
+}
+
+.innerBlock {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-auto-columns: calc(50% - 20px);
+  grid-auto-flow: column;
+  grid-column-gap: 40px;
+
+  @include breakpoint(screen960) {
+    max-width: calc(100vw - clamp(1.563rem, 6.58724vw, 3.125rem));
+    grid-auto-columns: 100%;
+  }
+}
+
+

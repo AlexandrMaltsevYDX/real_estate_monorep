@@ -1,0 +1,85 @@
+@import '~global_styles';
+
+.list {
+  @include common-ul;
+
+  width: 100%;
+  margin: 0 auto;
+
+    grid-area: nav;
+    display: grid;
+    align-content: center;
+    grid-auto-flow: column;
+    gap: 10px 40px;
+    grid-template-columns: auto auto auto;
+    grid-template-areas:
+    ". . ."
+    ". . ."
+    ". . empty1"
+    ". empty2 empty3";
+
+
+    @include breakpoint(screen960) {
+      gap: 10px 20px;
+      justify-content: space-between;
+      grid-template-columns: auto auto;
+      grid-template-areas:
+      ". ."
+      ". ."
+      ". ."
+      ". ."
+      "empty1 ."
+    }
+    @include breakpoint(screen576) {
+      justify-content: normal;
+    }
+
+}
+
+
+
+.listItem {
+  @include common-li;
+  &_empty1 {
+    grid-area: empty1;
+    visibility: hidden;
+  }
+
+  &_empty2 {
+    grid-area: empty2;
+    visibility: hidden;
+    @include breakpoint(screen960) {
+      display: none;
+    }
+  }
+
+  &_empty3 {
+    grid-area: empty3;
+    visibility: hidden;
+    @include breakpoint(screen960) {
+      display: none;
+    }
+  }
+}
+
+.link {
+  @include common-link;
+  @include special-text(link, $color: $gray-dark);
+
+  &:hover {
+    color: $accent-green;
+  }
+
+  @include breakpoint(screen768) {
+    font-size: 12px;
+  }
+}
+
+.active.link {
+  color: $accent-green;
+  cursor: default;
+  font-weight: $bold;
+  text-decoration: underline $accent-green 2px;
+  text-underline-offset: 4px;
+  line-height: 110%;
+}

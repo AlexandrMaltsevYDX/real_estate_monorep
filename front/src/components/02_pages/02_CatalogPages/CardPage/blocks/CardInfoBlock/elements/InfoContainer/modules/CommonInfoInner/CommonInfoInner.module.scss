@@ -1,0 +1,131 @@
+@import '~global_styles';
+
+.title {
+  @include common-title(hSmall);
+
+  @include breakpoint(screen768) {
+    margin-bottom: 4px;
+  }
+  @include breakpoint(screen576) {
+    margin-bottom:  12px;
+  }
+}
+
+
+.p {
+  @include common-paragraph(p,
+    $font-family: $ff-openSans,
+    $font-weight: $regular);
+}
+
+.strong {
+  @extend .p;
+  font-weight: $bold;
+}
+
+.li {
+  @include common-ul;
+  @include flexColumnGap($gap: 5px);
+}
+
+.ol {
+  @include common-ul;
+  padding-left: 25px;
+  @include flexColumnGap($gap: 5px);
+}
+
+ol .listItem  {
+  @include common-paragraph(p,
+  $font-family: $ff-openSans,
+  $font-weight: $regular);
+  padding-left: 10px;
+
+  &::marker {
+    color: $accent-green;
+    font-weight: $bold;
+  }
+}
+
+ul .listItem  {
+  @include common-li;
+  @include common-paragraph(p,
+  $font-family: $ff-openSans,
+  $font-weight: $regular);
+  padding-left: 25px;
+  position: relative;
+  display: inline-flex;
+
+  @include breakpoint(screen768) {
+    padding-left: 20px;
+  }
+  @include breakpoint(screen576) {
+    padding-left: 16px;
+  }
+
+  &::before {
+    content:'';
+    display: block;
+    position: absolute;
+    color: $accent-green;
+    width: 9px;
+    height: 9px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: $accent-green;
+    border-radius: 50%;
+
+    @include breakpoint(screen768) {
+      width: 7px;
+      height: 7px;
+    }
+    @include breakpoint(screen576) {
+      width: 5px;
+      height: 5px;
+    }
+  }
+}
+
+.em {
+  @extend .p;
+  font-style: italic;
+}
+
+.h2 {
+  @include common-paragraph(pXl,
+    $font-family: $ff-openSans,
+    $font-weight: $regular);
+}
+
+.h3 {
+  @include common-paragraph(pLg,
+    $font-family: $ff-openSans,
+    $font-weight: $regular);
+}
+
+.blockquote {
+  margin: 0;
+
+  & p {
+    @extend .h3;
+    font-family: $ff-gothamPro;
+    color: $accent-green;
+    font-weight: $medium;
+  }
+}
+
+.del {
+  @extend .p;
+  text-decoration: line-through;
+}
+
+
+.a {
+  @extend .p;
+  text-decoration: underline;
+  cursor: pointer;
+
+  &:hover {
+    color: $accent-green;
+  }
+}

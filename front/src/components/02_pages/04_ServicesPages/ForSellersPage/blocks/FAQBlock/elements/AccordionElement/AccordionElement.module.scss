@@ -1,0 +1,218 @@
+@import '~global_styles';
+
+.container {
+  padding: 40px 0;
+  border-bottom: 2px solid $gray;
+
+  @include breakpoint(screen1024) {
+    padding: clamp(25px, 3.5784vw, 40px) 0;
+  }
+
+  @include breakpoint(screen768) {
+    border-bottom: 1px solid $gray;
+  }
+
+  @include breakpoint(screen480) {
+    padding: 22px 0;
+  }
+}
+
+
+.questionInner {
+  display: grid;
+  grid-template-columns: auto 45px;
+  gap: 80px;
+  cursor: pointer;
+
+  @include breakpoint(screen1024) {
+    gap: 40px;
+  }
+
+  @include breakpoint(screen768) {
+    grid-template-columns: auto 40px;
+  }
+
+  @include breakpoint(screen576) {
+    gap: 20px;
+    grid-template-columns: auto 35px;
+  }
+
+  @include breakpoint(screen480) {
+    gap: 16px;
+    grid-template-columns: auto 30px;
+  }
+}
+
+.question {
+  @include common-paragraph(pXl,
+    $line-height: 120%);
+  max-width: fit-content;
+
+}
+
+
+.button {
+  @include common-button(transparent);
+  padding: 0;
+  box-sizing: border-box;
+  border-radius: 50%;
+  min-width: 45px;
+  width: 45px;
+  height: 45px;
+  border: 1px solid $dark;
+  transition: all 0.3s linear;
+
+  @include breakpoint(screen768) {
+    min-width: 40px;
+    width: 40px;
+    height: 40px;
+  }
+
+  @include breakpoint(screen576) {
+    min-width: 35px;
+    width: 35px;
+    height: 35px;
+  }
+
+  @include breakpoint(screen480) {
+    min-width: 30px;
+    width: 30px;
+    height: 30px;
+  }
+
+  & svg {
+    transition: all 0.3s linear;
+    width: 30px;
+    height: 30px;
+
+    @include breakpoint(screen1024) {
+      width: 25px;
+      height: 25px;
+    }
+
+    @include breakpoint(screen480) {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  &:hover {
+    transition: all 0.3s linear;
+
+    & svg {
+      stroke: $white;
+      transition: all 0.3s linear;
+    }
+  }
+}
+
+.answer {
+
+  @include common-paragraph(p,
+    $font-family: $ff-openSans,
+    $font-weight: $regular);
+  max-height: 0;
+  overflow: hidden;
+  transition: all .3s ease-out;
+}
+
+.answerVisible {
+  max-height: 1000px;
+  transition: all .3s ease-out;
+  padding-top: 20px;
+
+  @include breakpoint(screen480) {
+    padding-top: 16px;
+  }
+}
+
+
+.isOpened {
+  background-color: $accent-green;
+  border: 1px solid $accent-green;
+  transition: all 0.3s linear;
+
+  & svg {
+    transform: rotate(45deg);
+    stroke: $white;
+    transition: all 0.3s linear;
+  }
+}
+
+.p {
+  @include common-paragraph(p,
+    $font-family: $ff-openSans,
+    $font-weight: $regular);
+  text-indent: 1.5rem;
+  padding-bottom: .5rem;
+
+  @include breakpoint(screen480) {
+    text-indent: 0;
+  }
+
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.em {
+  @extend .p;
+  font-style: italic;
+}
+
+.strong {
+  @extend .p;
+  font-weight: $bold;
+}
+
+.li {
+  @include common-ul;
+  @include flexColumnGap($gap: 8px);
+
+}
+
+
+ul .listItem {
+  @include common-li;
+  @include common-paragraph(p,
+    $font-family: $ff-openSans,
+    $font-weight: $regular);
+  padding-left: 25px;
+  position: relative;
+  display: inline-flex;
+  font-style: italic;
+
+  @include breakpoint(screen768) {
+    padding-left: 20px;
+  }
+
+  @include breakpoint(screen576) {
+    padding-left: 16px;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    color: $accent-green;
+    width: 9px;
+    height: 9px;
+    left: 0;
+    top: 1rem;
+    transform: translateY(-50%);
+    background-color: $accent-green;
+    border-radius: 50%;
+
+    @include breakpoint(screen768) {
+      width: 7px;
+      height: 7px;
+      top: .8rem;
+    }
+
+    @include breakpoint(screen576) {
+      width: 5px;
+      height: 5px;
+    }
+  }
+}

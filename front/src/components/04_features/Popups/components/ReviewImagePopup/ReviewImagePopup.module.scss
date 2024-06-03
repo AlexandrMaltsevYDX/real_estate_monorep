@@ -1,0 +1,19 @@
+@import '~global_styles';
+
+.innerContainer {
+  margin-top: 40px;
+  @include flexColumnGap($gap: 20px);
+  border: 1px solid $gray;
+
+  @include breakpoint(screen576) {
+    margin-top: 30px;
+  }
+}
+
+.image {
+  max-width: 90vw;
+  width: 100%;
+  height: auto;
+  max-height: 90vh;
+  object-fit: contain;
+}

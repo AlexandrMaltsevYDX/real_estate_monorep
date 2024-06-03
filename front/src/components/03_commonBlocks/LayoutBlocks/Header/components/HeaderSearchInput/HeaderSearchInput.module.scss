@@ -1,0 +1,40 @@
+@import '~global_styles';
+
+
+.container {
+  flex-shrink: 4;
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-width: 240px;
+  &:focus-within {
+    svg {
+      stroke: $accent-green;
+    }
+  }
+
+  @include breakpoint(screen960) {
+    display: none;
+  }
+
+}
+
+.input {
+  @include common-input;
+  width: 100%;
+  font-size: 0.75rem;
+  line-height: 140%;
+  padding: 6px 40px 6px 15px;
+}
+
+.icon {
+  display: inline-flex;
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  width: 19px;
+  height: 19px;
+  //cursor: pointer;
+}
+

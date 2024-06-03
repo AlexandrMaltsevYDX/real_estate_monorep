@@ -1,0 +1,22 @@
+@import '~global_styles';
+
+.wrapper {
+  grid-area: title;
+  position: relative;
+  padding: $padding-gap;
+
+  @include breakpoint(screen1024) {
+    padding: $padding-gap-tab;
+  }
+  @include breakpoint(screen768) {
+    padding: $padding-gap-mob;
+  }
+}
+
+.container {
+  @include mainContainer;
+}
+
+.title {
+  @include common-title(h1);
+}

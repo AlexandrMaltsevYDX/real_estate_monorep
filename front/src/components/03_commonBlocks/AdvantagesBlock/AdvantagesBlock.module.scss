@@ -1,0 +1,69 @@
+@import '~global_styles';
+
+.wrapper {
+  grid-area: advantages;
+  border-bottom: 1px solid $gray;
+  position: relative;
+  padding: $padding-gap;
+
+  @include breakpoint(screen1024) {
+    padding: $padding-gap-tab;
+  }
+
+  @include breakpoint(screen768) {
+    padding: $padding-gap-mob;
+  }
+}
+
+.container {
+  @include mainContainer();
+  @include flexColumnGap();
+
+  @include breakpoint(screen768) {
+    gap: 30px;
+  }
+
+/*   @include breakpoint(screen576) {
+    gap: 24px;
+  } */
+}
+
+
+.iconsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+
+  @include breakpoint(screen1280) {
+    gap: 40px;
+  }
+
+  @include breakpoint(screen960) {
+    grid-template-columns: auto;
+    gap: 30px;
+  }
+
+  @include breakpoint(screen768) {
+    gap: 30px;
+  }
+
+  @include breakpoint(screen576) {
+  gap: 25px;
+  }
+}
+
+.title {
+  @include common-title(hTitle);
+}
+
+.titleContainer {
+  @include flexColumnGap($gap: 30px);
+
+  @include breakpoint(screen768) {
+    gap: 20px;
+  }
+
+  @include breakpoint(screen576) {
+  gap: 16px;
+  }
+}

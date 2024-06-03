@@ -1,0 +1,58 @@
+@import '~global_styles';
+
+.wrapper {
+  background-color: $dark;
+  padding: $padding-gap;
+
+  @include breakpoint(screen1024) {
+    padding: $padding-gap-tab;
+  }
+
+  @include breakpoint(screen768) {
+    padding: $padding-gap-mob;
+  }
+/*   padding: 70px 0;
+
+  @include breakpoint(screen1024) {
+    padding: clamp(50px, 6.6719vw, 70px) 0;
+  }
+
+  @include breakpoint(screen768) {
+  padding: clamp(30px, 7.2539vw, 50px) 0;
+  } */
+
+  &_first {
+    grid-area: requestAction-1;
+  }
+
+  &_second {
+    grid-area: requestAction-2;
+  }
+}
+
+.container {
+  @include mainContainer();
+  @include flexColumnGap($gap: 20px);
+
+    @include breakpoint(screen576) {
+    gap: 16px;
+  }
+}
+
+.title {
+  @include common-title(hSubtitle, $color: $white);
+}
+
+.description {
+  @include common-paragraph(pXl,
+    $color: $white,
+    $line-height: 125%);
+}
+
+.formContainer {
+  width: clamp(600px, 70%, 720px); //50%;
+
+  @include breakpoint(screen768) {
+    width: 100%;
+  }
+}

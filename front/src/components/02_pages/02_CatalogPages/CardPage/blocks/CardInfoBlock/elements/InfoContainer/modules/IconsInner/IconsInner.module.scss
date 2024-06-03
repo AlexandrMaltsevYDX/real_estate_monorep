@@ -1,0 +1,46 @@
+@import '~global_styles';
+
+
+
+
+.iconContainer {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: start;
+  align-items: center;
+  gap: 15px;
+
+}
+
+.icon {
+  display: flex;
+
+  & svg {
+    width: 80px;
+    height: 80px;
+
+    @include breakpoint(screen768) {
+      width: 70px;
+      height: 70px;
+    }
+    @include breakpoint(screen576) {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+}
+
+.info {
+  @include common-paragraph(p,
+  $font-weight: $regular,
+  $font-family: $ff-openSans);
+  @include breakpoint(screen480) {
+    text-align: start;
+  }
+
+  &_accent {
+
+    font-weight: $bold;
+  }
+}
