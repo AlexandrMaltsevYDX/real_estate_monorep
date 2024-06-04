@@ -1,0 +1,11 @@
+.draggable {
+    cursor: move;
+}
+
+.reobject-photo-container {
+    background-color: #333;
+}
+
+.draggable.dragging {
+    opacity: .5;
+}
