@@ -3,17 +3,18 @@ version: "3.8"
 services:
   backend: &django
     build:
-      context: ./back
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: ./back/Dockerfile
     env_file:
       - infra/postgres/.env
-    command: python manage.py runserver
-    expose:
-      - "8000"
+    entrypoint: /usr/local/bin/entrypoint.sh
+    command: python manage.py runserver 0.0.0.0:8000
+    # expose:
+    #   - "8000"
     ports:
-      - '3000:3000'
+      - '8000:8000'
     volumes:
-      - .:/app
+      - ./back:/app
       - media:/app/media
       - static:/app/staticroot
     networks:
@@ -43,6 +44,10 @@ services:
       - real_estate_network
 
 volumes:
+  media:
+    driver: local
+  static:
+    driver: local
   database_data:
     driver: local
 networks:

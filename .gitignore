@@ -178,3 +178,10 @@ back/**/.history
 
 # db.sqlite3
 back/**/node_modules/
+back/db.sqlite3
+front/.idea/front.iml
+front/.idea/misc.xml
+front/.idea/modules.xml
+front/.idea/vcs.xml
+front/.idea/inspectionProfiles/profiles_settings.xml
+front/.idea/inspectionProfiles/Project_Default.xml
